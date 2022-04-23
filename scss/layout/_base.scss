@@ -43,4 +43,38 @@ footer {
     "nav main"
     "footer footer";
   }
+
+  .main-grid-container {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    .block {
+      margin-bottom: 0;
+    }
+    .daily.block {
+      margin-right: 0;
+    }
+    section:first-child {
+      grid-column: span 2;
+    }
+    
+    section:nth-child(n+4) {
+      grid-column: span 2;
+    }
+  }
+}
+
+@include mq('lg') {
+  .main-grid-container{
+    .new-members.block, .messenger.block {
+      margin-right: 0;
+    }
+    section:nth-child(n+5) {
+      grid-column: span 1;
+    }
+    section:last-child {
+      grid-column: span 2;
+    }
+  }
 }

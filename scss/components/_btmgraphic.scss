@@ -3,6 +3,7 @@
 .btm-graphic {
   @include flexo(space-between);
   transform: rotate(180deg);
+  margin-top: 10px;
 }
 
 .c4 {

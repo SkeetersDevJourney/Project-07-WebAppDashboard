@@ -55,12 +55,11 @@
 
 .timezone {
   background-color: $color-primary;
-  font-size: .8em;
 }
 
-
-
 @include mq('med') {
-
+  .timezone {
+    font-size: 1em;
+  }
 }
 
