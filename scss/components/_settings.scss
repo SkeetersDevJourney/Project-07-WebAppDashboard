@@ -6,7 +6,7 @@
 }
 
 .set-text {
-  font-size: .65em;
+  font-size: .7em;
   padding: 10px;
 
 }
@@ -55,5 +55,12 @@
 
 .timezone {
   background-color: $color-primary;
+  font-size: .8em;
+}
+
+
+
+@include mq('med') {
+
 }
 

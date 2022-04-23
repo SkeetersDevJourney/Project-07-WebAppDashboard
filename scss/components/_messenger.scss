@@ -23,3 +23,11 @@
     background-color: $color-gradient-1;
   }
 }
+
+.user-search, .user-msg, .timezone {
+  &:hover, &:focus {
+    border-radius: 10px 10px 0 0;
+    border-bottom: 3px solid dkn($color-gradient-1);
+    transition: all .1s ease-out;
+  }
+}

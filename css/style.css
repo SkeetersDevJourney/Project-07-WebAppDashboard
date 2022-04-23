@@ -41,7 +41,7 @@ h2, h3, h4, text {
   font-family: "Overpass Mono", monospace;
 }
 
-p, a, input, button, select, ::placeholder {
+p, a, input, button, select, option, ::placeholder {
   font-family: "Numans", sans-serif;
 }
 
@@ -139,7 +139,8 @@ h4 {
   background-color: rgba(255, 255, 255, 0.6);
 }
 .nav-container svg:hover path {
-  fill: #22c1c3;
+  fill: #1a9698;
+  transition: fill 0.2s;
 }
 
 @media (min-width: 768px) {
@@ -154,9 +155,9 @@ footer {
   text-align: center;
   background-color: rgba(255, 255, 255, 0.8);
 }
-footer p {
+footer h4 {
   font-size: 0.7em;
-  padding: 20px 0;
+  padding: 25px 0;
 }
 
 .block {
@@ -206,6 +207,7 @@ text {
 
 .remove-alert {
   font-weight: bold;
+  user-select: none;
 }
 
 .c2 {
@@ -342,6 +344,12 @@ a {
   background-color: #22c1c3;
 }
 
+.user-search:hover, .user-search:focus, .user-msg:hover, .user-msg:focus, .timezone:hover, .timezone:focus {
+  border-radius: 10px 10px 0 0;
+  border-bottom: 3px solid #1a9698;
+  transition: all 0.1s ease-out;
+}
+
 .setting {
   display: flex;
   justify-content: space-between;
@@ -351,7 +359,7 @@ a {
 }
 
 .set-text {
-  font-size: 0.65em;
+  font-size: 0.7em;
   padding: 10px;
 }
 
@@ -398,6 +406,25 @@ a {
 
 .timezone {
   background-color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8em;
+}
+
+.btm-graphic {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  transform: rotate(180deg);
+}
+
+.c4 {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .c4 {
+    display: block;
+    transform: scale(-1, 1);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

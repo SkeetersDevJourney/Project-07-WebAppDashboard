@@ -7,9 +7,8 @@
   background-color: $color-secondary;
   svg:hover {
     path {
-      fill: $color-gradient-1;
-      // stroke: dkn($color-gradient-1);
-      // transition: fill .2s; 
+      fill: dkn($color-gradient-1);
+      transition: fill .2s; 
     }
   }
 }

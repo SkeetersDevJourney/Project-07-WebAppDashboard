@@ -1,0 +1,17 @@
+@use "../util" as *;
+
+.btm-graphic {
+  @include flexo(space-between);
+  transform: rotate(180deg);
+}
+
+.c4 {
+  display: none;
+}
+
+@include mq('med') {
+  .c4 {
+    display: block;
+    transform: scale(-1, 1);
+  }
+}
