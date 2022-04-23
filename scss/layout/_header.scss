@@ -1,0 +1,36 @@
+@use "../util" as *;
+
+header {
+  width: 100%;
+  height: 88px;
+  @include flexo(space-between, center);
+  background-color: $color-primary;
+  padding: 0 15px;
+  gap: 30px;
+}
+
+h1 {
+  font-size: 2em;
+  @include txt-gradient(45deg, $color-gradient-1, $color-gradient-2);
+}
+
+h4 {
+  font-size: .7em;
+}
+
+.user-header {
+  @include flexo(flex-end, center); 
+  gap: 10px;
+  img {
+    width: 36px;
+    height: 36px;
+  }
+  svg {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+
+
+

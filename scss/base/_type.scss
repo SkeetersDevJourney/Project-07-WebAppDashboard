@@ -1,0 +1,21 @@
+// font-family: 'Amatic SC', cursive;
+// font-family: 'Numans', sans-serif;
+// font-family: 'Overpass Mono', monospace;
+
+h1 {
+  font-family: 'Amatic SC', cursive;
+}
+
+h2, h3, h4, text {
+  font-family: 'Overpass Mono', monospace;
+}
+
+p, a, input, button, select, ::placeholder {
+  font-family: 'Numans', sans-serif;
+}
+
+strong {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+

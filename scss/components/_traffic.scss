@@ -1,0 +1,15 @@
+@use "../util" as *;
+
+.traffic-time-container {
+  @include flexo(space-around, center, $wrap: wrap);
+  margin: 10px auto;
+  input {
+    font-size: .7em;
+    padding: .45em;
+    border-radius: 10px;
+    &:hover {
+      outline: 3px solid rgba(36, 128, 0, 0.8);
+      transition: outline .1s;
+    }
+  }
+}

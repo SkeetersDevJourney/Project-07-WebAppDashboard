@@ -1,0 +1,32 @@
+@use "../util" as *;
+
+.member-card {
+  height: 160px;
+  @include flexo(center, center, column);
+  gap: 5px;
+  text-align: center;
+  padding: 15px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  img {
+    width: 64px;
+    height: 64px;
+  }
+  p, a {
+    font-size: .7em;
+  }
+}
+
+.member-card:last-child {
+  padding-bottom: 0;
+  border: none;
+}
+
+a {
+  @include txt-gradient(to bottom left, $color-gradient-1, $color-gradient-2);
+}
+
+.arrow {
+  display: none;
+  background-color: $color-gradient-1;
+}
+

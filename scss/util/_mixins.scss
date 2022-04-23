@@ -1,0 +1,41 @@
+@mixin flexo($just: null, 
+             $align: null,
+             $dir: row,
+             $wrap: null) {
+  display: flex;
+  justify-content: $just;
+  align-items: $align;
+  flex-direction: $dir;
+  flex: $wrap;
+}
+
+@mixin mq($break) {
+  @if $break == 'med' {
+    @media (min-width: 768px) {
+      @content;
+    } 
+  } @else if $break == 'lg' {
+    @media (min-width: 1024px) {
+      @content;
+    } 
+  }
+}
+
+@function dkn($color) {
+  @return darken($color, 10%);
+}
+
+@function light($color) {
+  @return lighten($color, 10%);
+}
+
+@mixin txt-gradient($dir, $color1, $color2) {
+  background-color: $color1;
+  background-image: linear-gradient($dir, dkn($color1), dkn($color2));
+  background-size: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}

@@ -1,0 +1,46 @@
+@use "../util" as *;
+
+body {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, #22c1c3, #fdbb2d) center / cover no-repeat;
+}
+
+header {
+  grid-area: header;  
+}
+
+nav {
+  grid-area: nav;  
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+}
+
+.grid-container {
+  
+  display: grid;
+  grid-template-columns: 100%; 
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "header"
+    "nav"
+    "main"
+    "footer";
+}
+
+@include mq('med') {
+  .grid-container {
+    grid-template-columns: 55px 1fr;
+    grid-template-areas: 
+    "header header"
+    "nav main"
+    "nav main"
+    "footer footer";
+  }
+}

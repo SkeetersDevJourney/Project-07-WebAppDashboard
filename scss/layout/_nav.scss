@@ -1,0 +1,25 @@
+@use "../util" as *;
+
+.nav-container {
+  @include flexo(center, center);
+  gap: 15px;
+  height: 55px;
+  background-color: $color-secondary;
+  svg:hover {
+    path {
+      fill: $color-gradient-1;
+      // stroke: dkn($color-gradient-1);
+      // transition: fill .2s; 
+    }
+  }
+}
+
+@include mq('med') {
+  .nav-container {
+    justify-content: flex-start;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 10px;
+  }
+
+}

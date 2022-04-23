@@ -1,0 +1,25 @@
+@use "../util" as *;
+
+.user-msg {
+  display: block;
+  min-height: 100px;
+}
+
+.user-search, .user-msg, .send-btn, .timezone {
+  width: 100%;
+  border-radius: 10px;
+  margin: 5px 0;
+  padding: .6em;
+}
+
+.send-btn, #save-btn, #cancel-btn {
+  font-weight: bold;
+  color: $color-primary;
+  background-color: dkn($color-gradient-1);
+  width: 100%;
+  padding: .5em;
+  border-radius: 10px; 
+  &:hover {
+    background-color: $color-gradient-1;
+  }
+}

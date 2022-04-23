@@ -1,0 +1,34 @@
+@use "../util" as *;
+
+.stat-img {
+  @include flexo(center, center);
+  width: 64px;
+  height: 64px;
+  background-color: $color-gradient-1;
+  border-radius: 50%;
+}
+
+.stat {
+  @include flexo(flex-start, center);
+  gap: 15px;
+  margin: 10px 0;
+  padding: .7em .5em;
+  background-color: $color-primary;
+  border-radius: 10px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  & p:first-child {
+    color: $color-gradient-1;
+    font-size: .9em;
+    font-weight: bold;
+  }
+  & p:last-child {
+    color: rgb(121, 121, 121);
+    font-size: 1.8em;
+  }
+}
+
+.stats-path {
+  fill: #fff;
+}

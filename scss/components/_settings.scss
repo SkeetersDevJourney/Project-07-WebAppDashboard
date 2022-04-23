@@ -1,0 +1,59 @@
+@use "../util" as *;
+
+.setting {
+  @include flexo(space-between, center);
+  margin: 5px 0;
+}
+
+.set-text {
+  font-size: .65em;
+  padding: 10px;
+
+}
+
+.switch {
+  @include flexo($align: center);
+  background-color: dkn($color-gradient-1);
+  border-radius: 12px;
+  padding: 4px;
+  input {
+    text-align: center;
+    width: 70px;
+    color: $color-primary;
+    padding: .4em;
+    background-color: dkn($color-gradient-1);
+  }
+  input:first-child {
+    border-radius: 10px 0 0 10px;
+
+  }
+  input:last-child {
+    border-radius: 0 10px 10px 0;
+
+  }
+}
+
+.sw-on {
+  input:last-child {
+    font-weight: bold;
+    background-color: $color-gradient-1;
+  }
+}
+
+.sw-off {
+  input:first-child {
+    font-weight: bold;
+    background-color: $color-gradient-1;
+  }
+}
+
+.btn-container {
+  @include flexo(space-between, center);
+  gap: 10px;
+  margin: 5px 0;
+}
+
+.timezone {
+  background-color: $color-primary;
+}
+

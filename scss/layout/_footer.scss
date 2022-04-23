@@ -1,0 +1,11 @@
+@use "../util" as *;
+
+footer {
+  text-align: center;
+  background-color: $color-primary;
+  p {
+    font-size: .7em;
+    padding: 20px 0;
+  }
+}
+
