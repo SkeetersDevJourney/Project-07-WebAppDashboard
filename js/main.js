@@ -32,17 +32,31 @@ removeAlert.addEventListener('click', () => {
 // });
 
 /*//////////////////////////////// 
-///           Charts           ///
+///       Traffic Charts       ///
 ////////////////////////////////*/
+
+
+
+
+const data1 = [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500];
+const data2 = [250, 750, 1750, 1000, 1250, 2000, 1000, 1950, 2000, 750, 1000];
+const data3 = [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500];
+const data4 = [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500];
+
+function addData() {
+  trafficChart.data.datasets[0].data = data2;
+  trafficChart.update();
+}
+
 
 let traffic = document.getElementById('traffic-chart').getContext('2d');
 let trafficChart = new Chart(traffic, {
-    type: 'bar',
+    type: 'line',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26','27-3', '4-10', '11-17', '18-24', '25-31'],
         datasets: [{
             label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            data: data1,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -59,54 +73,70 @@ let trafficChart = new Chart(traffic, {
                 'rgba(153, 102, 255, 1)',
                 'rgba(255, 159, 64, 1)'
             ],
-            borderWidth: 1
+            borderWidth: 1,
+            cubicInterpolationMode: 'monotone',
+            fill: true
         }]
     },
     options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
+      layout: {
+        padding: 20
+      },
+      scales: {
+          y: {
+              beginAtZero: true
+          }
+      },
+      plugins: {
+        legend: {
+          display: false
         }
+      }  
     }
 });
+
+/*////////////////////////////////
+///        Daily Chart         ///
+////////////////////////////////*/
 
 let daily = document.getElementById('daily-chart').getContext('2d');
 
 let dailyChart = new Chart(daily, {
     type: 'bar',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
         datasets: [{
             label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            data: [75, 110, 175, 125, 225, 200, 100],
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+              '#22c1c3'
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+              'rgba(255, 255, 255, 0.6)'
             ],
-            borderWidth: 1
+            borderWidth: 2
         }]
     },
     options: {
+        layout: {
+          padding: 20
+        },
         scales: {
             y: {
                 beginAtZero: true
             }
+        },
+        plugins: {
+          legend: {
+            display: false
+          }
         }
     }
 });
+
+/*////////////////////////////////
+///       Doughnut Chart       ///
+////////////////////////////////*/
 
 let mobile = document.getElementById('mobile-chart').getContext('2d');
 
@@ -114,20 +144,31 @@ let config = new Chart(mobile, {
   type: 'doughnut',
   data: {
     labels: [
-      'Red',
-      'Blue',
-      'Yellow'
+      'Desktop',
+      'Tablet',
+      'Phones'
     ],
     datasets: [{
-      label: 'My First Dataset',
-      data: [300, 50, 100],
+      label: 'Mobile Users',
+      data: [270, 65, 65],
       backgroundColor: [
-        'rgb(255, 99, 132)',
-        'rgb(54, 162, 235)',
-        'rgb(255, 205, 86)'
+        '#22c1c3',
+        '#ff7b00',
+        'rgb(153, 102, 255)'
       ],
-      hoverOffset: 4
+      hoverOffset: 15
     }]
+  },
+  options: {
+    maintainAspectRatio: false,
+    layout: {
+      padding: 20
+    },
+    plugins: {
+      legend: {
+        position: 'right'
+      }
+    }
   }
 });
 
@@ -183,7 +224,7 @@ function setSettings() {
     if (options[i].value == localStorage.getItem('s3')) {
       options[i].setAttribute('selected', 'selected');
     } else {
-      options[i].setAttribute('selected');
+      options[i].removeAttribute('selected');
     }
   }
 

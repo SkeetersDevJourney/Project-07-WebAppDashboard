@@ -35,6 +35,30 @@ a {
 
 .arrow {
   display: none;
-  background-color: $color-gradient-1;
+  background-color: $color-primary;
+  color: $color-gradient-1;
+  font-size: 2em;
+  font-weight: 900;
+  padding: .1em .15em;
+  border-radius: 10px;
 }
 
+@include mq('med') {
+  .member-card {
+    justify-content: flex-start;
+    flex-direction: row;
+    text-align: left;
+    gap: 20px;
+    img {
+      margin: 0;
+    }
+    p:last-child {
+      margin-left: auto;
+    }
+  }
+
+  .arrow {
+    display: block;
+    margin-left: auto;
+  }
+}
