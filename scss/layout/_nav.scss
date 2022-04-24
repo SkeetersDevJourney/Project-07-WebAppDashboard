@@ -5,12 +5,23 @@
   gap: 15px;
   height: 55px;
   background-color: $color-secondary;
-  svg:hover {
-    path {
-      fill: dkn($color-gradient-1);
-      transition: fill .2s; 
+}
+
+.nav-svg {
+  path {
+    fill: dkn($color-gradient-1);
+  }
+  &:hover {
+  path {
+    fill: $color-gradient-1;
+    transition: fill .2s; 
     }
   }
+}
+
+.fix {
+  stroke: dkn($color-gradient-1);
+  stroke-width: 2px;
 }
 
 @include mq('med') {

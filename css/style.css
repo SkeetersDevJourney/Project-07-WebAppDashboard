@@ -14,8 +14,8 @@
 }
 
 img, svg {
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   display: block;
 }
 
@@ -168,9 +168,18 @@ h4 {
   height: 55px;
   background-color: rgba(255, 255, 255, 0.6);
 }
-.nav-container svg:hover path {
+
+.nav-svg path {
   fill: #1a9698;
+}
+.nav-svg:hover path {
+  fill: #22c1c3;
   transition: fill 0.2s;
+}
+
+.fix {
+  stroke: #1a9698;
+  stroke-width: 2px;
 }
 
 @media (min-width: 768px) {
@@ -263,14 +272,27 @@ text {
 }
 .traffic-time-container input {
   font-size: 0.7em;
-  padding: 0.45em;
+  padding: 0.55em;
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
 }
-.traffic-time-container input:hover {
-  outline: 3px solid rgba(36, 128, 0, 0.8);
-  transition: outline 0.1s;
-}
 
+@media (min-width: 768px) {
+  .traffic-time-container {
+    margin: 0;
+    gap: 15px;
+  }
+  .traffic-time-container input {
+    font-size: 0.8em;
+  }
+
+  .traffic-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+}
 .stat-img {
   display: flex;
   justify-content: center;
@@ -324,9 +346,17 @@ text {
 .member-card img {
   width: 64px;
   height: 64px;
+  margin-bottom: 5px;
 }
-.member-card p, .member-card a {
+.member-card p {
   font-size: 0.7em;
+}
+.member-card a {
+  font-size: 0.75em;
+}
+
+.new-members {
+  line-height: 0.8em;
 }
 
 .member-card:last-child {
@@ -376,7 +406,7 @@ a {
 
 .user-search:hover, .user-search:focus, .user-msg:hover, .user-msg:focus, .timezone:hover, .timezone:focus {
   border-radius: 10px 10px 0 0;
-  border-bottom: 3px solid #1a9698;
+  border-bottom: 4px solid #1a9698;
   transition: all 0.1s ease-out;
 }
 

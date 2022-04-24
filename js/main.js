@@ -17,20 +17,19 @@ removeAlert.addEventListener('click', () => {
 ///          Switches          ///
 ////////////////////////////////*/
 
-const switches = document.querySelector('.settings');
+// const switches = document.querySelector('.settings');
 
-switches.addEventListener('click', (e) => {
-  let sw = e.target;
+// switches.addEventListener('click', (e) => {
+//   let sw = e.target;
 
-  if (sw.tagName === 'INPUT') {
-    if (sw.parentNode.className == "switch sw-on") {
-      sw.parentNode.className = "switch sw-off"
-    } else {
-      sw.parentNode.className = "switch sw-on"
-    }
-  }
-
-});
+//   if (sw.tagName === 'INPUT') {
+//     if (sw.parentNode.className == "switch sw-on") {
+//       sw.parentNode.className = "switch sw-off"
+//     } else {
+//       sw.parentNode.className = "switch sw-on"
+//     }
+//   }
+// });
 
 /*//////////////////////////////// 
 ///           Charts           ///
@@ -131,3 +130,113 @@ let config = new Chart(mobile, {
     }]
   }
 });
+
+/*////////////////////////////////
+///          Storage           ///
+////////////////////////////////*/
+
+let s1 = document.getElementById('s1');
+let s2 = document.getElementById('s2');
+let s3 = document.getElementById('s3');
+let options = document.querySelectorAll('option');
+let save = document.getElementById('save-btn');
+let cancel = document.getElementById('cancel-btn');
+
+if (localStorage.getItem('firstTime') == undefined) {
+  localStorage.setItem('firstTime', 'NO');
+  localStorage.setItem('s1', 'OFF');
+  localStorage.setItem('s2', 'OFF');
+  localStorage.setItem('s3', 'default'); 
+}
+
+sessionStorage.setItem('s1', `${localStorage.getItem('s1')}`);
+sessionStorage.setItem('s2', `${localStorage.getItem('s2')}`);
+sessionStorage.setItem('s3', `${localStorage.getItem('s3')}`);
+
+setSettings();
+
+function setSettings() {
+
+  // Send Email Notifications
+  if (localStorage.getItem('s1') == 'OFF') {
+    s1.className = "switch sw-off";
+  } else {
+    s1.className = "switch sw-on";
+  }
+
+  // Set Profile Privacy
+  if (localStorage.getItem('s2') == 'OFF') {
+    s2.className = "switch sw-off";
+  } else {
+    s2.className = "switch sw-on";
+  }
+
+  // Selected Timezone
+  if (localStorage.getItem('s3') == 'default') {
+    console.log(options[0]);
+    options[0].selected = 'selected';
+  } else {
+    options[0].removeAttribute('selected');
+  }
+  
+  for (let i=0; i<options.length; i++) {
+    if (options[i].value == localStorage.getItem('s3')) {
+      options[i].setAttribute('selected', 'selected');
+    } else {
+      options[i].setAttribute('selected');
+    }
+  }
+
+}
+
+s1.addEventListener('click', () => {
+  console.log('btn 1 click');
+  if (sessionStorage.getItem('s1') == 'OFF') {
+    sessionStorage.setItem('s1', 'ON');
+    s1.className = "switch sw-on";
+  } else {
+    sessionStorage.setItem('s1', 'OFF');
+    s1.className = "switch sw-off";
+  }
+});
+
+s2.addEventListener('click', () => {
+  console.log('btn 2 click');
+  if (sessionStorage.getItem('s2') == 'OFF') {
+    sessionStorage.setItem('s2', 'ON');
+    s2.className = "switch sw-on";
+  } else {
+    sessionStorage.setItem('s2', 'OFF');
+    s2.className = "switch sw-off";
+  }
+});
+
+s3.addEventListener('click', (e) => {
+  let option = e.target.value;
+  if (option == '' || option == undefined) {
+    sessionStorage.setItem('s3', 'default');
+  } else {
+    sessionStorage.setItem('s3', option);
+  }
+});
+
+save.addEventListener('click', () => {
+  for (const key in sessionStorage) {
+    localStorage.setItem(`${key}`, `${sessionStorage[key]}`);
+  }
+  console.log('Settings Saved...');
+})
+
+cancel.addEventListener('click', () => {
+  for (const key in localStorage) {
+    sessionStorage.setItem(`${key}`, `${localStorage[key]}`);
+    setSettings();
+  }
+  console.log('Changes Cancelled...');
+})
+
+
+
+
+
+

@@ -10,10 +10,18 @@
   img {
     width: 64px;
     height: 64px;
+    margin-bottom: 5px;
   }
-  p, a {
+  p {
     font-size: .7em;
   }
+  a {
+    font-size: .75em;
+  }
+}
+
+.new-members {
+  line-height: .8em;
 }
 
 .member-card:last-child {
