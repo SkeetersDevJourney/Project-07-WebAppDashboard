@@ -1,7 +1,7 @@
 @use "../util" as *;
 
 .traffic-time-container {
-  @include flexo(space-around, center, $wrap: wrap);
+  @include flexo(space-around, center);
   margin: 10px auto;
   input {
     font-size: .7em;

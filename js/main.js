@@ -183,9 +183,9 @@ let config = new Chart(mobile, {
       label: 'Mobile Users',
       data: [270, 65, 65],
       backgroundColor: [
-        '#22c1c3',
-        '#ff7b00',
-        'rgb(153, 102, 255)'
+        'rgba(34, 193, 195, 0.6 )',
+        'rgba(255, 123, 0, 0.6)',
+        'rgba(153, 102, 255, 0.6)'
       ],
       borderColor: [
         'rgba(20, 115, 117, 0.8)'

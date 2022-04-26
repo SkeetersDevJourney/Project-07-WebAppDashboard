@@ -1,12 +1,12 @@
-@mixin flexo($just: '', 
-             $align: '',
-             $dir: row,
-             $wrap: '') {
+@mixin flexo($just: null, 
+             $align: null,
+             $dir: null,
+             $wrap: null) {
   display: flex;
   justify-content: $just;
   align-items: $align;
   flex-direction: $dir;
-  flex: $wrap;
+  flex-wrap: $wrap;
 }
 
 @mixin mq($break) {

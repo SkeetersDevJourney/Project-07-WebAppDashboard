@@ -19,11 +19,6 @@
   }
 }
 
-.fix {
-  stroke: dkn($color-gradient-1);
-  stroke-width: 2px;
-}
-
 @include mq('med') {
   .nav-container {
     justify-content: flex-start;
