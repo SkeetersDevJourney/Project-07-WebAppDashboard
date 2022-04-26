@@ -6,8 +6,13 @@
   input {
     font-size: .7em;
     padding: .55em;
-    background-color: $color-primary;
+    background-color: dkn($color-gradient-1);
+    color: $color-primary;
     border-radius: 10px;
+    &:hover, &:focus {
+      background-color: $color-gradient-1;
+      outline: 2px solid dkn($color-gradient-1);
+    }
   }
 }
 

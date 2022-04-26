@@ -21,6 +21,10 @@
   border-radius: 10px; 
   &:hover {
     background-color: $color-gradient-1;
+  }     
+  &:focus {
+    outline: 2px solid dkn($color-gradient-1);
+    background-color: $color-gradient-1;
   }
 }
 
@@ -30,4 +34,26 @@
     border-bottom: 4px solid dkn($color-gradient-1);
     transition: all .1s ease-out;
   }
+}
+
+
+.search-container {
+  position: relative;
+}
+
+.name-dropdown {
+  display: none;
+  position: absolute;
+  width: 100%;
+  background-color: white;
+  margin-top: -5px;
+  & > * {
+    font-size: .85em;
+    padding: .5em;
+    border-bottom: 1px solid lightgrey;  
+  }
+}
+
+.hide-user {
+  display: none;
 }

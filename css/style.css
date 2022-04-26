@@ -41,7 +41,7 @@ h2, h3, h4, text {
   font-family: "Overpass Mono", monospace;
 }
 
-p, a, input, button, select, option, ::placeholder {
+p, a, li, input, button, select, option, ::placeholder {
   font-family: "Numans", sans-serif;
 }
 
@@ -122,6 +122,7 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  flex: "";
   background-color: rgba(255, 255, 255, 0.8);
   padding: 0 15px;
   gap: 30px;
@@ -143,11 +144,54 @@ h4 {
   font-size: 0.7em;
 }
 
+.bell-container {
+  position: relative;
+}
+
+.show {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: tomato;
+  left: 90%;
+  bottom: 90%;
+}
+
+.notifications {
+  position: absolute;
+  background-color: white;
+  width: 250px;
+  left: -200%;
+  top: 120%;
+}
+
+.notifications-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex: "";
+  border-bottom: 1px solid lightgrey;
+}
+.notifications-item p {
+  font-size: 0.6em;
+  padding: 0.5em;
+  border-left: 1px solid lightgrey;
+}
+.notifications-item p:first-child {
+  width: 100%;
+  flex-grow: 3;
+}
+.notifications-item p:not(:first-child) {
+  flex-grow: 1;
+}
+
 .user-header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   flex-direction: row;
+  flex: "";
   gap: 10px;
 }
 .user-header img {
@@ -164,15 +208,16 @@ h4 {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  flex: "";
   gap: 15px;
   height: 55px;
   background-color: rgba(255, 255, 255, 0.6);
 }
 
-.nav-svg path {
+.nav-svg path, .bell path {
   fill: #1a9598;
 }
-.nav-svg:hover path {
+.nav-svg:hover path, .nav-svg:focus path, .bell:hover path, .bell:focus path {
   fill: #22c0c3;
   transition: fill 0.2s;
 }
@@ -234,6 +279,7 @@ text {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  flex: "";
   margin: 10px;
   padding: 10px 20px;
   background-color: #ffa600;
@@ -273,8 +319,13 @@ text {
 .traffic-time-container input {
   font-size: 0.7em;
   padding: 0.55em;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #1a9598;
+  color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
+}
+.traffic-time-container input:hover, .traffic-time-container input:focus {
+  background-color: #22c0c3;
+  outline: 2px solid #1a9598;
 }
 
 @media (min-width: 768px) {
@@ -291,6 +342,7 @@ text {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+    flex: "";
   }
 }
 .stat-img {
@@ -298,6 +350,7 @@ text {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  flex: "";
   width: 64px;
   height: 64px;
   background-color: #22c0c3;
@@ -309,6 +362,7 @@ text {
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
+  flex: "";
   gap: 15px;
   margin: 10px 0;
   padding: 0.7em 0.5em;
@@ -338,6 +392,7 @@ text {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  flex: "";
   gap: 5px;
   text-align: center;
   padding: 15px;
@@ -373,6 +428,9 @@ a {
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
+}
+a:focus {
+  outline: 2px solid #1a9598;
 }
 
 .arrow {
@@ -427,6 +485,10 @@ a {
 .send-btn:hover, #save-btn:hover, #cancel-btn:hover {
   background-color: #22c0c3;
 }
+.send-btn:focus, #save-btn:focus, #cancel-btn:focus {
+  outline: 2px solid #1a9598;
+  background-color: #22c0c3;
+}
 
 .user-search:hover, .user-search:focus, .user-msg:hover, .user-msg:focus, .timezone:hover, .timezone:focus {
   border-radius: 10px 10px 0 0;
@@ -434,11 +496,33 @@ a {
   transition: all 0.1s ease-out;
 }
 
+.search-container {
+  position: relative;
+}
+
+.name-dropdown {
+  display: none;
+  position: absolute;
+  width: 100%;
+  background-color: white;
+  margin-top: -5px;
+}
+.name-dropdown > * {
+  font-size: 0.85em;
+  padding: 0.5em;
+  border-bottom: 1px solid lightgrey;
+}
+
+.hide-user {
+  display: none;
+}
+
 .setting {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  flex: "";
   margin: 5px 0;
 }
 
@@ -449,8 +533,10 @@ a {
 
 .switch {
   display: flex;
+  justify-content: "";
   align-items: center;
   flex-direction: row;
+  flex: "";
   background-color: #1a9598;
   border-radius: 12px;
   padding: 4px;
@@ -484,6 +570,7 @@ a {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
+  flex: "";
   gap: 10px;
   margin: 5px 0;
 }
@@ -500,7 +587,9 @@ a {
 .btm-graphic {
   display: flex;
   justify-content: space-between;
+  align-items: "";
   flex-direction: row;
+  flex: "";
   transform: rotate(180deg);
   margin-top: 10px;
 }

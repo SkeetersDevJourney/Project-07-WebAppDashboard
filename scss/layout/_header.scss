@@ -18,6 +18,44 @@ h4 {
   font-size: .7em;
 }
 
+.bell-container {
+  position: relative;
+}
+
+.show {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: tomato;
+  left: 90%;
+  bottom: 90%;
+}
+
+.notifications {
+  position: absolute;
+  background-color: white;
+  width: 250px;
+  left: -200%;
+  top: 120%;
+}
+
+.notifications-item {
+  @include flexo(space-between, center);
+  border-bottom: 1px solid lightgrey;
+  p {
+  font-size: .6em;
+  padding: .5em;
+  border-left: 1px solid lightgrey;
+  }
+  p:first-child {
+    width: 100%;
+    flex-grow: 3;
+  }
+  p:not(:first-child) {
+    flex-grow: 1;
+  }
+}
+
 .user-header {
   @include flexo(flex-end, center); 
   gap: 10px;

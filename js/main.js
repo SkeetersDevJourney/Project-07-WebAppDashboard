@@ -14,68 +14,68 @@ removeAlert.addEventListener('click', () => {
 });
 
 /*//////////////////////////////// 
-///          Switches          ///
-////////////////////////////////*/
-
-// const switches = document.querySelector('.settings');
-
-// switches.addEventListener('click', (e) => {
-//   let sw = e.target;
-
-//   if (sw.tagName === 'INPUT') {
-//     if (sw.parentNode.className == "switch sw-on") {
-//       sw.parentNode.className = "switch sw-off"
-//     } else {
-//       sw.parentNode.className = "switch sw-on"
-//     }
-//   }
-// });
-
-/*//////////////////////////////// 
 ///       Traffic Charts       ///
 ////////////////////////////////*/
 
+const dataHourly = [25, 30, 15, 35, 20, 45, 20, 15, 35, 15, 20];
+const labelsHourly = ['10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm']
+
+const dataDaily = [210, 350, 300, 150, 250, 450, 300, 250, 400, 350, 200];
+const labelsDaily = ['Wed', 'Thu', 'Fri', 'Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+const dataWeekly = [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500];
+const labelsWeekly = ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26','27-3', '4-10', '11-17', '18-24', '25-31'];
+
+const dataMonthly = [3250, 5250, 2000, 7000, 6500, 3450, 4000, 7450, 8000, 6250, 9250];
+const labelsMonthly = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Hun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'];
 
 
-
-const data1 = [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500];
-const data2 = [250, 750, 1750, 1000, 1250, 2000, 1000, 1950, 2000, 750, 1000];
-const data3 = [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500];
-const data4 = [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500];
-
-function addData() {
-  trafficChart.data.datasets[0].data = data2;
+function addData(data1, data2) {
+  trafficChart.data.datasets[0].data = data1;
+  trafficChart.data.labels = data2;
   trafficChart.update();
 }
+
+let hourlyBtn = document.getElementById('hourly');
+hourlyBtn.addEventListener('click', () => {
+  addData(dataHourly, labelsHourly);
+})
+
+let dailyBtn = document.getElementById('daily');
+dailyBtn.addEventListener('click', () => {
+  addData(dataDaily, labelsDaily);
+})
+
+let weeklyBtn = document.getElementById('weekly');
+weeklyBtn.addEventListener('click', () => {
+  addData(dataWeekly, labelsWeekly);
+})
+
+let monthlyBtn = document.getElementById('monthly');
+monthlyBtn.addEventListener('click', () => {
+  addData(dataMonthly, labelsMonthly);
+})
 
 
 let traffic = document.getElementById('traffic-chart').getContext('2d');
 let trafficChart = new Chart(traffic, {
     type: 'line',
     data: {
-        labels: ['16-22', '23-29', '30-5', '6-12', '13-19', '20-26','27-3', '4-10', '11-17', '18-24', '25-31'],
+        labels: labelsHourly,
         datasets: [{
-            label: '# of Votes',
-            data: data1,
+            label: 'Traffic',
+            fill: true,
+            fillColor: '',
+            strokeColor: '#22c1c3',
+            data: dataHourly,
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+              'rgba(34, 193, 195, 0.2)'
             ],
             borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+              'rgba(20, 115, 117, 0.8)'
             ],
             borderWidth: 1,
             cubicInterpolationMode: 'monotone',
-            fill: true
         }]
     },
     options: {
@@ -106,13 +106,13 @@ let dailyChart = new Chart(daily, {
     data: {
         labels: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
         datasets: [{
-            label: '# of Votes',
+            label: 'Daily Traffic',
             data: [75, 110, 175, 125, 225, 200, 100],
             backgroundColor: [
-              '#22c1c3'
+              'rgba(34, 193, 195, 0.2)'
             ],
             borderColor: [
-              'rgba(255, 255, 255, 0.6)'
+              'rgba(20, 115, 117, 0.8)'
             ],
             borderWidth: 2
         }]
@@ -156,7 +156,10 @@ let config = new Chart(mobile, {
         '#ff7b00',
         'rgb(153, 102, 255)'
       ],
-      hoverOffset: 15
+      borderColor: [
+        'rgba(20, 115, 117, 0.8)'
+      ],
+      hoverOffset: 10
     }]
   },
   options: {
@@ -171,6 +174,44 @@ let config = new Chart(mobile, {
     }
   }
 });
+
+/*////////////////////////////////
+///         Messenger          ///
+////////////////////////////////*/
+
+let searchBar = document.getElementById('userSearch');
+let dropdown = document.querySelector('.name-dropdown');
+let userNames = document.querySelectorAll('.user-to-msg');
+let textArea = document.getElementById('userMsg');
+
+
+searchBar.addEventListener('click', () => {
+  dropdown.style.display = 'block';
+});
+
+dropdown.addEventListener('click', (e) => {
+  let selectedUser = e.target;
+  searchBar.value = "";
+  searchBar.setAttribute('placeholder', selectedUser.innerText);
+  dropdown.style.display = 'none';
+  sessionStorage.setItem('User-To-Message', selectedUser.textContent);
+});
+
+searchBar.addEventListener('keyup', () => {
+  let userInput = searchBar.value.toUpperCase();
+  for (let i=0; i<userNames.length; i++) {
+    txtValue = userNames[i].innerText.toUpperCase();
+    if (txtValue.includes(userInput) == false) {
+      userNames[i].style.display = 'none';
+    } else {
+      userNames[i].style.display = 'block';
+    }
+  }
+});
+
+textArea.addEventListener('keyup', () => {
+  sessionStorage.setItem('Msg-For-User', textArea.value);
+})
 
 /*////////////////////////////////
 ///          Storage           ///

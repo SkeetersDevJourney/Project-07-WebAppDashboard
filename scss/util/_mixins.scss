@@ -1,7 +1,7 @@
-@mixin flexo($just: null, 
-             $align: null,
+@mixin flexo($just: '', 
+             $align: '',
              $dir: row,
-             $wrap: null) {
+             $wrap: '') {
   display: flex;
   justify-content: $just;
   align-items: $align;

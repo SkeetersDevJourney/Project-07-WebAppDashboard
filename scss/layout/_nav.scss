@@ -7,11 +7,11 @@
   background-color: $color-secondary;
 }
 
-.nav-svg {
+.nav-svg, .bell {
   path {
     fill: dkn($color-gradient-1);
   }
-  &:hover {
+  &:hover, &:focus {
   path {
     fill: $color-gradient-1;
     transition: fill .2s; 
