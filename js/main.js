@@ -2,6 +2,37 @@
 ///       Notifications        ///
 ////////////////////////////////*/
 
+let notifications = document.getElementById('notifs');
+let show;
+
+let bell = document.getElementById('bell-icon');
+
+bell.addEventListener('click', () => {
+  if (show) {
+    notifications.className = "notifications";
+    show = false;
+  } else {
+    notifications.className = "notifications show-notifs";
+    show = true;
+  }
+});
+
+let removeNotif = document.querySelectorAll('.remove-notif');
+let numberOfNotifs = removeNotif.length;
+let indicator = document.getElementById('indicator');
+
+for (let i=0; i<removeNotif.length; i++) {
+  removeNotif[i].addEventListener('click', (e) => {
+    let notif = e.target;
+    notif.parentNode.style.display = 'none';
+    numberOfNotifs--;
+    if (numberOfNotifs == 0) {
+      indicator.style.display= 'none';
+      alertBox.style.display = 'none';
+    }
+  });
+}
+
 /*//////////////////////////////// 
 ///           Alert            ///
 ////////////////////////////////*/

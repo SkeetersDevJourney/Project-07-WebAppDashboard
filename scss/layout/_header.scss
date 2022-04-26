@@ -1,6 +1,7 @@
 @use "../util" as *;
 
 header {
+  position: relative;
   width: 100%;
   height: 88px;
   @include flexo(space-between, center);
@@ -27,33 +28,49 @@ h4 {
   width: 5px;
   height: 5px;
   background-color: tomato;
+  border-radius: 50%; 
   left: 90%;
   bottom: 90%;
 }
 
 .notifications {
   position: absolute;
-  background-color: white;
-  width: 250px;
-  left: -200%;
-  top: 120%;
+  background-color: ghostwhite;
+  transform-origin: top right;
+  top: 88px;
+  right: -200%;
+  border-radius: 0 0 0 15px;
 }
 
 .notifications-item {
   @include flexo(space-between, center);
   border-bottom: 1px solid lightgrey;
+  
   p {
-  font-size: .6em;
-  padding: .5em;
-  border-left: 1px solid lightgrey;
+    flex: 1;
+    font-size: .6em;
+    padding: .6em;
+    border-left: 1px solid lightgrey;
   }
   p:first-child {
-    width: 100%;
-    flex-grow: 3;
+    flex: 6;
+    border: none;
+  }
+  p:nth-child(2) {
+    flex: 2;
   }
   p:not(:first-child) {
-    flex-grow: 1;
+    text-align: center;
   }
+  p:last-child {
+    user-select: none;
+    cursor: pointer;
+  }
+}
+
+.show-notifs {
+  right: 0;
+  transition: right .2s ease-in;
 }
 
 .user-header {
