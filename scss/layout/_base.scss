@@ -1,3 +1,7 @@
+/*///////////////////////////////
+///        Base Layout        ///
+///////////////////////////////*/
+
 @use "../util" as *;
 
 body {
@@ -55,11 +59,7 @@ footer {
     .daily.block {
       margin-right: 0;
     }
-    section:first-child {
-      grid-column: span 2;
-    }
-    
-    section:nth-child(n+4) {
+    section:first-child, section:nth-child(n+4), .btm-graphic {
       grid-column: span 2;
     }
   }

@@ -3,9 +3,8 @@
 ////////////////////////////////*/
 
 let notifications = document.getElementById('notifs');
-let show;
-
 let bell = document.getElementById('bell-icon');
+let show;
 
 bell.addEventListener('click', () => {
   if (show) {
