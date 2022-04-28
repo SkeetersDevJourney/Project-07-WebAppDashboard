@@ -311,8 +311,13 @@ text {
 }
 
 .remove-alert {
+  padding: 0 0.3em;
   font-weight: bold;
   user-select: none;
+  cursor: pointer;
+}
+.remove-alert:hover {
+  font-size: 1.1em;
 }
 
 .c2 {
@@ -605,11 +610,13 @@ a:focus {
 .sw-on input:last-child {
   font-weight: bold;
   background-color: #22c0c3;
+  transition: background-color 0.2s ease-out;
 }
 
 .sw-off input:first-child {
   font-weight: bold;
   background-color: #22c0c3;
+  transition: background-color 0.2s ease-out;
 }
 
 .btn-container {

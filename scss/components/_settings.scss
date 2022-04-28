@@ -39,6 +39,7 @@
   input:last-child {
     font-weight: bold;
     background-color: $color-gradient-1;
+    transition: background-color .2s ease-out;
   }
 }
 
@@ -46,6 +47,7 @@
   input:first-child {
     font-weight: bold;
     background-color: $color-gradient-1;
+    transition: background-color .2s ease-out;
   }
 }
 

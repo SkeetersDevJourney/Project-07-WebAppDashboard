@@ -350,7 +350,6 @@ function setSettings() {
 }
 
 s1.addEventListener('click', () => {
-  console.log('btn 1 click');
   if (sessionStorage.getItem('s1') == 'OFF') {
     sessionStorage.setItem('s1', 'ON');
     s1.className = "switch sw-on";
@@ -361,7 +360,6 @@ s1.addEventListener('click', () => {
 });
 
 s2.addEventListener('click', () => {
-  console.log('btn 2 click');
   if (sessionStorage.getItem('s2') == 'OFF') {
     sessionStorage.setItem('s2', 'ON');
     s2.className = "switch sw-on";
@@ -387,13 +385,13 @@ save.addEventListener('click', () => {
   console.log('Settings Saved...');
 })
 
-cancel.addEventListener('click', () => {
-  for (const key in localStorage) {
-    sessionStorage.setItem(`${key}`, `${localStorage[key]}`);
-    setSettings();
-  }
-  console.log('Changes Cancelled...');
-})
+// cancel.addEventListener('click', (e) => {
+//   for (const key in localStorage) {
+//     sessionStorage.setItem(`${key}`, `${localStorage[key]}`);
+//     setSettings();
+//   }
+//   console.log('Changes Cancelled...');
+// })
 
 reset.addEventListener('click', () => {
   localStorage.setItem('s1', 'OFF');

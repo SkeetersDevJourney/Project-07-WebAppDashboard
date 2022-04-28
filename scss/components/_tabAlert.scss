@@ -36,8 +36,13 @@ text {
 }
 
 .remove-alert {
+  padding: 0 .3em;
   font-weight: bold;
   user-select: none;
+  cursor: pointer;
+  &:hover {
+    font-size: 1.1em;
+  }
 }
 
 .c2 {
