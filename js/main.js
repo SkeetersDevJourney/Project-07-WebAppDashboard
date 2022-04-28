@@ -247,15 +247,15 @@ textArea.addEventListener('keyup', () => {
 });
 
 sendBtn.addEventListener('click', (e) => {
+
+  e.preventDefault();
   let currentSearch = searchBar.placeholder;
   let currentText = textArea.value;
 
   if (currentSearch == "Search for User") {
-    e.preventDefault();
     alert1.style.display = 'block';
 
-  } else if (textArea.value == "") {
-    e.preventDefault();
+  } else if (currentText == "") {
     alert2.style.display = 'block';
 
   } else {
@@ -264,7 +264,7 @@ sendBtn.addEventListener('click', (e) => {
     }
     msgSent.style.display = 'block';
     mainGrid.style.height = '100vh';
-    window.scrollTo({top: 0, behavior: 'smooth'}); 
+    window.scrollTo({top: 0}); 
     alert1.style.display = 'none';
     alert2.style.display = 'none';
   }
