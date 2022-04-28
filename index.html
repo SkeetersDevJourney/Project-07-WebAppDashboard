@@ -20,7 +20,7 @@
     ///          Header             ///
     ////////////////////////////////-->
 
-    <header>
+    <header id="top" >
       <h1>WebApp&trade;</h1>
       <div class="user-header">
         <div class="bell-container">
@@ -62,7 +62,7 @@
 
     <nav>
       <div class="nav-container">
-        <a href="#" class="nav-link">
+        <a href="#top" class="nav-link">
           <svg class="nav-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 114.45">
             <path class="nav-path" d="M110.8 107.88v4.48c0 1.16-.94 2.09-2.09 2.09h-95.1a2.09 2.09 0 01-2.09-2.09V58.9c-2.34.9-4.53.92-6.35.3a7.521 7.521 0 01-3.5-2.45A7.721 7.721 0 01.06 52.8c-.26-2.31.43-4.92 2.4-7.37.1-.12.21-.24.34-.34L59.85.55c.74-.68 1.88-.75 2.7-.11l57.19 44.46c.09.07.17.14.25.23 2.65 2.85 3.31 6.01 2.67 8.68a8.035 8.035 0 01-1.82 3.48c-.87.98-1.98 1.74-3.24 2.19-2 .72-4.38.7-6.79-.44v48.84h-.01zM5.57 48.23c-1.11 1.45-1.5 2.9-1.37 4.12.08.7.33 1.32.73 1.82.39.49.92.86 1.56 1.08 1.09.37 2.5.27 4.11-.49l49.79-37.88c.77-.59 1.82-.56 2.55.01l48.37 37.6c.02.02.04.04.07.05 1.77 1.28 3.47 1.48 4.79 1.01a3.72 3.72 0 001.55-1.05c.42-.47.72-1.03.87-1.66.33-1.38-.07-3.08-1.55-4.74L61.27 4.74 5.57 48.23zM29.6 75.49h26.7c1.04 0 1.89.83 1.89 1.85v20.89c0 1.02-.85 1.85-1.89 1.85H29.6c-1.04 0-1.89-.83-1.89-1.85V77.34a1.88 1.88 0 011.89-1.85zm38.13-1.84H92.8c1.12 0 2.03.94 2.03 2.1v34.52h11.78v-53.7c0-.14.01-.27.04-.4L61.64 21.18 15.63 56.19c.05.17.07.35.07.54v53.53h50V75.74c0-1.16.91-2.09 2.03-2.09zm23.04 4.19h-21v32.38h21V77.84zM54.41 89.63H44.5v6.75h9.91v-6.75zm-13.61 0h-9.31v6.75h9.31v-6.75zm-9.31-3.7h9.31v-6.74h-9.31v6.74zm13.01 0h9.91v-6.74H44.5v6.74zm16.38-49.6c3.55 0 6.43 2.88 6.43 6.43s-2.88 6.43-6.43 6.43-6.43-2.88-6.43-6.43c0-3.56 2.88-6.43 6.43-6.43z" />
           </svg>
@@ -117,379 +117,399 @@
 
       <div class="main-grid-container">
 
-      <section id="traf" class="traffic block">
-        <div class="traffic-header">
-          <h3>TRAFFIC</h3>
-          <div class="traffic-time-container">
-            <input type="button" id="hourly" value="Hourly">
-            <input type="button" id="daily" value="Daily">
-            <input type="button" id="weekly" value="Weekly">
-            <input type="button" id="monthly" value="Monthly">
-          </div>
-        </div>
-        <div class="canvas-container">
-          <canvas id="traffic-chart"></canvas>
-        </div>
-      </section>
-
-      <section class="daily block">
-        <h3>DAILY TRAFFIC</h3>
-        <div class="canvas-container">
-          <canvas id="daily-chart"></canvas>
-        </div>
-      </section>
-
-      <section class="mobile block">
-        <h3>MOBILE USERS</h3>
-        <div class="canvas-container">
-          <canvas id="mobile-chart"></canvas>
-        </div>
-      </section>
-
-      <!--///////////////////////////////
-      ///        Social Stats         ///
-      ////////////////////////////////-->
-
-      <section class="social-stats block">
-        <h3>SOCIAL STATS</h3>
-        <div class="stat-container">
-          <div class="stat">
-            <div class="stat-img">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path class="stats-path" d="M23.998 12c0-6.628-5.372-12-11.999-12C5.372 0 0 5.372 0 12c0 5.988 4.388 10.952 10.124 11.852v-8.384H7.078v-3.469h3.046V9.356c0-3.008 1.792-4.669 4.532-4.669 1.313 0 2.686.234 2.686.234v2.953H15.83c-1.49 0-1.955.925-1.955 1.874V12h3.328l-.532 3.469h-2.796v8.384c5.736-.9 10.124-5.864 10.124-11.853z"/>
-              </svg>
-            </div>
-            <div class="stat-txt">
-              <p>Facebook</p>
-              <p>10,320</p>
+        <section id="traf" class="m-block traffic block">
+          <div class="traffic-header">
+            <h3>TRAFFIC</h3>
+            <div class="traffic-time-container">
+              <input type="button" id="hourly" value="Hourly">
+              <input type="button" id="daily" value="Daily">
+              <input type="button" id="weekly" value="Weekly">
+              <input type="button" id="monthly" value="Monthly">
             </div>
           </div>
-          <div class="stat">
-            <div class="stat-img">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path class="stats-path"   d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913a5.885 5.885 0 001.384 2.126A5.868 5.868 0 004.14 23.37c.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558a5.898 5.898 0 002.126-1.384 5.86 5.86 0 001.384-2.126c.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913a5.89 5.89 0 00-1.384-2.126A5.847 5.847 0 0019.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227a3.81 3.81 0 01-.899 1.382 3.744 3.744 0 01-1.38.896c-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421a3.716 3.716 0 01-1.379-.899 3.644 3.644 0 01-.9-1.38c-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 100-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 01-2.88 0 1.44 1.44 0 012.88 0z"/>
-              </svg>
+          <div class="canvas-container">
+            <canvas id="traffic-chart"></canvas>
+          </div>
+        </section>
+
+        <section class="m-block daily block">
+          <h3>DAILY TRAFFIC</h3>
+          <div class="canvas-container">
+            <canvas id="daily-chart"></canvas>
+          </div>
+        </section>
+
+        <section class="m-block mobile block">
+          <h3>MOBILE USERS</h3>
+          <div class="canvas-container">
+            <canvas id="mobile-chart"></canvas>
+          </div>
+        </section>
+
+        <!--///////////////////////////////
+        ///        Social Stats         ///
+        ////////////////////////////////-->
+
+        <section class="m-block social-stats block">
+          <h3>SOCIAL STATS</h3>
+          <div class="stat-container">
+            <div class="stat">
+              <div class="stat-img">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path class="stats-path" d="M23.998 12c0-6.628-5.372-12-11.999-12C5.372 0 0 5.372 0 12c0 5.988 4.388 10.952 10.124 11.852v-8.384H7.078v-3.469h3.046V9.356c0-3.008 1.792-4.669 4.532-4.669 1.313 0 2.686.234 2.686.234v2.953H15.83c-1.49 0-1.955.925-1.955 1.874V12h3.328l-.532 3.469h-2.796v8.384c5.736-.9 10.124-5.864 10.124-11.853z"/>
+                </svg>
+              </div>
+              <div class="stat-txt">
+                <p>Facebook</p>
+                <p>10,320</p>
+              </div>
             </div>
-            <div class="stat-txt">
-              <p>Instagram</p>
-              <p>16,445</p>
+            <div class="stat">
+              <div class="stat-img">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path class="stats-path"   d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913a5.885 5.885 0 001.384 2.126A5.868 5.868 0 004.14 23.37c.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558a5.898 5.898 0 002.126-1.384 5.86 5.86 0 001.384-2.126c.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913a5.89 5.89 0 00-1.384-2.126A5.847 5.847 0 0019.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227a3.81 3.81 0 01-.899 1.382 3.744 3.744 0 01-1.38.896c-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421a3.716 3.716 0 01-1.379-.899 3.644 3.644 0 01-.9-1.38c-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 100-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 01-2.88 0 1.44 1.44 0 012.88 0z"/>
+                </svg>
+              </div>
+              <div class="stat-txt">
+                <p>Instagram</p>
+                <p>16,445</p>
+              </div>
             </div>
-          </div>
-          <div class="stat">
-            <div class="stat-img">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path class="stats-path"  d="M23.954 4.569a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.691 8.094 4.066 6.13 1.64 3.161a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.061a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63a9.936 9.936 0 002.46-2.548l-.047-.02z"/>
-              </svg>
-            </div>
-            <div class="stat-txt">
-              <p>Twitter</p>
-              <p>22,189</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!--///////////////////////////////
-      ///         New Members         ///
-      ////////////////////////////////-->
-
-      <section id="mem" class="new-members block">
-        <h3>NEW MEMBERS</h3>
-        <div class="member-card">
-          <img src="images/member-1.jpg" alt="an image of Victoria Chambers">
-          <div class="member-txt">
-            <p>Victoria Chambers</p>
-            <a href="mailto:victoria.chambers80@example.com">victoria.chambers80@example.com</a>
-          </div>
-          <p class="join-date">11/20/22</p>
-        </div>
-        <div class="member-card">
-          <img src="images/member-2.jpg" alt="an image of Dale Byrd">
-          <div class="member-txt">
-            <p>Dale Byrd</p>
-            <a href="mailto:dale.byrd52@example.com">dale.byrd52@example.com</a>
-          </div>
-          <p class="join-date">11/03/22</p>
-        </div>
-        <div class="member-card">
-          <img src="images/member-3.jpg" alt="an image of Dawn Wood">
-          <div class="member-txt">
-            <p>Dawn Wood</p>
-            <a href="mailto:dawn.wood16@example.com">dawn.wood16@example.com</a>
-          </div>
-          <p class="join-date">10/20/22</p>
-        </div>
-        <div class="member-card">
-          <img src="images/member-4.jpg" alt="an image of Dan Oliver">
-          <div class="member-txt">
-            <p>Dan Oliver</p>
-            <a href="mailto:dan.byrd52@example.com">dan.byrd52@example.com</a>
-          </div>
-          <p class="join-date">10/09/22</p>
-        </div>
-        <div class="member-card">
-          <img src="images/self.png" alt="an image of Zacharie McGee">
-          <div class="member-txt">
-            <p>Zacharie McGee</p>
-            <a href="mailto:skeeters.devjourney@gmail.com">skeeters.devjourney@gmail.com</a>
-          </div>
-          <p class="join-date">9/21/22</p>
-        </div>
-      </section>
-      
-      <!--///////////////////////////////
-      ///      Recent Activity        ///
-      ////////////////////////////////-->
-
-      <section class="activity block">
-        <h3>RECENT ACTIVITY</h3>
-        <div class="member-card">
-          <img src="images/member-1.jpg" alt="an image of Victoria Chambers">
-          <div class="member-txt">
-            <p>Victoria Chambers commented on <strong>WebApp's SEO Tips</strong></p>
-            <p>4 hours ago</p>
-          </div>
-          <div class="arrow">&gt;</div>
-        </div>
-        <div class="member-card">
-          <img src="images/member-2.jpg" alt="an image of Dale Byrd">
-          <div class="member-txt">
-            <p>Dale Byrd liked the post <strong>Facebook's Changes for 2021</strong></p>
-            <p>5 hours ago</p>
-          </div>
-          <div class="arrow">&gt;</div>
-        </div>
-        <div class="member-card">
-          <img src="images/member-3.jpg" alt="an image of Dawn Wood">
-          <div class="member-txt">
-            <p>Dawn Wood commented on <strong>Facebook's Changes for 2021</strong></p>
-            <p>5 hours ago</p>
-          </div>
-          <div class="arrow">&gt;</div>
-        </div>
-        <div class="member-card">
-          <img src="images/member-4.jpg" alt="an image of Dan Oliver">
-          <div class="member-txt">
-            <p>Dan Oliver posted <strong>WebApp's SEO Tips</strong></p>
-            <p>1 day ago</p>
-          </div>
-          <div class="arrow">&gt;</div>
-        </div>
-        <div class="member-card">
-          <img src="images/self.png" alt="an image of Zacharie McGee">
-          <div class="member-txt">
-            <p>Zacharie McGee created <strong>WebApp&trade;</strong></p>
-            <p>2 days ago</p>
-          </div>
-          <div class="arrow">&gt;</div>
-        </div>
-      </section>
-
-      <!--///////////////////////////////
-      ///          Messenger          ///
-      ////////////////////////////////-->
-
-      <section class="messenger block">
-        <h3>MESSAGE USER</h3>
-        <form>
-          <div class="search-container">
-            <input type="text"   
-                  class="user-search"
-                  id="userSearch"
-                  placeholder="Search for User"
-                  autocomplete="off">
-                  <ul class="name-dropdown">
-                    <li class="user-to-msg">Dale Byrd</li>
-                    <li class="user-to-msg">Dan Oliver</li>
-                    <li class="user-to-msg">Dawn Wood</li>
-                    <li class="user-to-msg">Victoria Chambers</li>
-                    <li class="user-to-msg">Zacharie McGee</li>
-                  </ul>
-          </div>
-          <textarea class="user-msg"  
-                    id="userMsg"
-                    placeholder="Message to User"></textarea>
-          <button class="send-btn" 
-                  id="sendBtn">SEND</button>
-        </form>
-      </section> 
-
-      <!--///////////////////////////////
-      ///           Settings          ///
-      ////////////////////////////////-->
-
-      <section id="sett" class="settings block">
-        <h3>SETTINGS</h3>
-        <form>
-          <div class="setting">
-            <p class="set-text">Send Email Notifications</p>
-
-            <div id="s1" class="switch">
-              <input type="button" value="OFF">
-              <input type="button" value="ON">
+            <div class="stat">
+              <div class="stat-img">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path class="stats-path"  d="M23.954 4.569a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.691 8.094 4.066 6.13 1.64 3.161a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.061a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63a9.936 9.936 0 002.46-2.548l-.047-.02z"/>
+                </svg>
+              </div>
+              <div class="stat-txt">
+                <p>Twitter</p>
+                <p>22,189</p>
+              </div>
             </div>
           </div>
+        </section>
 
-          <div class="setting">
-            <p class="set-text">Set Profile to Public</p>
-            <div id="s2" class="switch">
-              <input type="button" value="OFF">
-              <input type="button" value="ON">
+        <!--///////////////////////////////
+        ///         New Members         ///
+        ////////////////////////////////-->
+
+        <section id="mem" class="m-block new-members block">
+          <h3>NEW MEMBERS</h3>
+          <div class="member-card">
+            <img src="images/member-1.jpg" alt="an image of Victoria Chambers">
+            <div class="member-txt">
+              <p>Victoria Chambers</p>
+              <a href="mailto:victoria.chambers80@example.com">victoria.chambers80@example.com</a>
             </div>
+            <p class="join-date">11/20/22</p>
           </div>
+          <div class="member-card">
+            <img src="images/member-2.jpg" alt="an image of Dale Byrd">
+            <div class="member-txt">
+              <p>Dale Byrd</p>
+              <a href="mailto:dale.byrd52@example.com">dale.byrd52@example.com</a>
+            </div>
+            <p class="join-date">11/03/22</p>
+          </div>
+          <div class="member-card">
+            <img src="images/member-3.jpg" alt="an image of Dawn Wood">
+            <div class="member-txt">
+              <p>Dawn Wood</p>
+              <a href="mailto:dawn.wood16@example.com">dawn.wood16@example.com</a>
+            </div>
+            <p class="join-date">10/20/22</p>
+          </div>
+          <div class="member-card">
+            <img src="images/member-4.jpg" alt="an image of Dan Oliver">
+            <div class="member-txt">
+              <p>Dan Oliver</p>
+              <a href="mailto:dan.byrd52@example.com">dan.byrd52@example.com</a>
+            </div>
+            <p class="join-date">10/09/22</p>
+          </div>
+          <div class="member-card">
+            <img src="images/self.png" alt="an image of Zacharie McGee">
+            <div class="member-txt">
+              <p>Zacharie McGee</p>
+              <a href="mailto:skeeters.devjourney@gmail.com">skeeters.devjourney@gmail.com</a>
+            </div>
+            <p class="join-date">9/21/22</p>
+          </div>
+        </section>
+        
+        <!--///////////////////////////////
+        ///      Recent Activity        ///
+        ////////////////////////////////-->
 
-          <select id="s3" class="timezone">
-            <optgroup label="Global Timezones" class="options">
-              <option value="" disabled hidden>Select a Timezone</option>
-              <option value="Hawaii">(GMT-10:00) Hawaii</option>
-              <option value="Alaska">(GMT-09:00) Alaska</option>
-              <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
-              <option value="Arizona">(GMT-07:00) Arizona</option>
-              <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
-              <option value="Central Time (US &amp; Canada)">(GMT-06:00) Central Time (US &amp; Canada)</option>
-              <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
-              <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option><option value="" disabled="disabled">-------------</option>
-              <option value="International Date Line West">(GMT-11:00) International Date Line West</option>
-              <option value="Midway Island">(GMT-11:00) Midway Island</option>
-              <option value="Samoa">(GMT-11:00) Samoa</option>
-              <option value="Tijuana">(GMT-08:00) Tijuana</option>
-              <option value="Chihuahua">(GMT-07:00) Chihuahua</option>
-              <option value="Mazatlan">(GMT-07:00) Mazatlan</option>
-              <option value="Central America">(GMT-06:00) Central America</option>
-              <option value="Guadalajara">(GMT-06:00) Guadalajara</option>
-              <option value="Mexico City">(GMT-06:00) Mexico City</option>
-              <option value="Monterrey">(GMT-06:00) Monterrey</option>
-              <option value="Saskatchewan">(GMT-06:00) Saskatchewan</option>
-              <option value="Bogota">(GMT-05:00) Bogota</option>
-              <option value="Lima">(GMT-05:00) Lima</option>
-              <option value="Quito">(GMT-05:00) Quito</option>
-              <option value="Caracas">(GMT-04:30) Caracas</option>
-              <option value="Atlantic Time (Canada)">(GMT-04:00) Atlantic Time (Canada)</option>
-              <option value="La Paz">(GMT-04:00) La Paz</option>
-              <option value="Santiago">(GMT-04:00) Santiago</option>
-              <option value="Newfoundland">(GMT-03:30) Newfoundland</option>
-              <option value="Brasilia">(GMT-03:00) Brasilia</option>
-              <option value="Buenos Aires">(GMT-03:00) Buenos Aires</option>
-              <option value="Georgetown">(GMT-03:00) Georgetown</option>
-              <option value="Greenland">(GMT-03:00) Greenland</option>
-              <option value="Mid-Atlantic">(GMT-02:00) Mid-Atlantic</option>
-              <option value="Azores">(GMT-01:00) Azores</option>
-              <option value="Cape Verde Is.">(GMT-01:00) Cape Verde Is.</option>
-              <option value="Casablanca">(GMT) Casablanca</option>
-              <option value="Dublin">(GMT) Dublin</option>
-              <option value="Edinburgh">(GMT) Edinburgh</option>
-              <option value="Lisbon">(GMT) Lisbon</option>
-              <option value="London">(GMT) London</option>
-              <option value="Monrovia">(GMT) Monrovia</option>
-              <option value="Amsterdam">(GMT+01:00) Amsterdam</option>
-              <option value="Belgrade">(GMT+01:00) Belgrade</option>
-              <option value="Berlin">(GMT+01:00) Berlin</option>
-              <option value="Bern">(GMT+01:00) Bern</option>
-              <option value="Bratislava">(GMT+01:00) Bratislava</option>
-              <option value="Brussels">(GMT+01:00) Brussels</option>
-              <option value="Budapest">(GMT+01:00) Budapest</option>
-              <option value="Copenhagen">(GMT+01:00) Copenhagen</option>
-              <option value="Ljubljana">(GMT+01:00) Ljubljana</option>
-              <option value="Madrid">(GMT+01:00) Madrid</option>
-              <option value="Paris">(GMT+01:00) Paris</option>
-              <option value="Prague">(GMT+01:00) Prague</option>
-              <option value="Rome">(GMT+01:00) Rome</option>
-              <option value="Sarajevo">(GMT+01:00) Sarajevo</option>
-              <option value="Skopje">(GMT+01:00) Skopje</option>
-              <option value="Stockholm">(GMT+01:00) Stockholm</option>
-              <option value="Vienna">(GMT+01:00) Vienna</option>
-              <option value="Warsaw">(GMT+01:00) Warsaw</option>
-              <option value="West Central Africa">(GMT+01:00) West Central Africa</option>
-              <option value="Zagreb">(GMT+01:00) Zagreb</option>
-              <option value="Athens">(GMT+02:00) Athens</option>
-              <option value="Bucharest">(GMT+02:00) Bucharest</option>
-              <option value="Cairo">(GMT+02:00) Cairo</option>
-              <option value="Harare">(GMT+02:00) Harare</option>
-              <option value="Helsinki">(GMT+02:00) Helsinki</option>
-              <option value="Istanbul">(GMT+02:00) Istanbul</option>
-              <option value="Jerusalem">(GMT+02:00) Jerusalem</option>
-              <option value="Kyiv">(GMT+02:00) Kyiv</option>
-              <option value="Minsk">(GMT+02:00) Minsk</option>
-              <option value="Pretoria">(GMT+02:00) Pretoria</option>
-              <option value="Riga">(GMT+02:00) Riga</option>
-              <option value="Sofia">(GMT+02:00) Sofia</option>
-              <option value="Tallinn">(GMT+02:00) Tallinn</option>
-              <option value="Vilnius">(GMT+02:00) Vilnius</option>
-              <option value="Baghdad">(GMT+03:00) Baghdad</option>
-              <option value="Kuwait">(GMT+03:00) Kuwait</option>
-              <option value="Moscow">(GMT+03:00) Moscow</option>
-              <option value="Nairobi">(GMT+03:00) Nairobi</option>
-              <option value="Riyadh">(GMT+03:00) Riyadh</option>
-              <option value="St. Petersburg">(GMT+03:00) St. Petersburg</option>
-              <option value="Volgograd">(GMT+03:00) Volgograd</option>
-              <option value="Tehran">(GMT+03:30) Tehran</option>
-              <option value="Abu Dhabi">(GMT+04:00) Abu Dhabi</option>
-              <option value="Baku">(GMT+04:00) Baku</option>
-              <option value="Muscat">(GMT+04:00) Muscat</option>
-              <option value="Tbilisi">(GMT+04:00) Tbilisi</option>
-              <option value="Yerevan">(GMT+04:00) Yerevan</option>
-              <option value="Kabul">(GMT+04:30) Kabul</option>
-              <option value="Ekaterinburg">(GMT+05:00) Ekaterinburg</option>
-              <option value="Islamabad">(GMT+05:00) Islamabad</option>
-              <option value="Karachi">(GMT+05:00) Karachi</option>
-              <option value="Tashkent">(GMT+05:00) Tashkent</option>
-              <option value="Chennai">(GMT+05:30) Chennai</option>
-              <option value="Kolkata">(GMT+05:30) Kolkata</option>
-              <option value="Mumbai">(GMT+05:30) Mumbai</option>
-              <option value="New Delhi">(GMT+05:30) New Delhi</option>
-              <option value="Kathmandu">(GMT+05:45) Kathmandu</option>
-              <option value="Almaty">(GMT+06:00) Almaty</option>
-              <option value="Astana">(GMT+06:00) Astana</option>
-              <option value="Dhaka">(GMT+06:00) Dhaka</option>
-              <option value="Novosibirsk">(GMT+06:00) Novosibirsk</option>
-              <option value="Sri Jayawardenepura">(GMT+06:00) Sri Jayawardenepura</option>
-              <option value="Rangoon">(GMT+06:30) Rangoon</option>
-              <option value="Bangkok">(GMT+07:00) Bangkok</option>
-              <option value="Hanoi">(GMT+07:00) Hanoi</option>
-              <option value="Jakarta">(GMT+07:00) Jakarta</option>
-              <option value="Krasnoyarsk">(GMT+07:00) Krasnoyarsk</option>
-              <option value="Beijing">(GMT+08:00) Beijing</option>
-              <option value="Chongqing">(GMT+08:00) Chongqing</option>
-              <option value="Hong Kong">(GMT+08:00) Hong Kong</option>
-              <option value="Irkutsk">(GMT+08:00) Irkutsk</option>
-              <option value="Kuala Lumpur">(GMT+08:00) Kuala Lumpur</option>
-              <option value="Perth">(GMT+08:00) Perth</option>
-              <option value="Singapore">(GMT+08:00) Singapore</option>
-              <option value="Taipei">(GMT+08:00) Taipei</option>
-              <option value="Ulaan Bataar">(GMT+08:00) Ulaan Bataar</option>
-              <option value="Urumqi">(GMT+08:00) Urumqi</option>
-              <option value="Osaka">(GMT+09:00) Osaka</option>
-              <option value="Sapporo">(GMT+09:00) Sapporo</option>
-              <option value="Seoul">(GMT+09:00) Seoul</option>
-              <option value="Tokyo">(GMT+09:00) Tokyo</option>
-              <option value="Yakutsk">(GMT+09:00) Yakutsk</option>
-              <option value="Adelaide">(GMT+09:30) Adelaide</option>
-              <option value="Darwin">(GMT+09:30) Darwin</option>
-              <option value="Brisbane">(GMT+10:00) Brisbane</option>
-              <option value="Canberra">(GMT+10:00) Canberra</option>
-              <option value="Guam">(GMT+10:00) Guam</option>
-              <option value="Hobart">(GMT+10:00) Hobart</option>
-              <option value="Melbourne">(GMT+10:00) Melbourne</option>
-              <option value="Port Moresby">(GMT+10:00) Port Moresby</option>
-              <option value="Sydney">(GMT+10:00) Sydney</option>
-              <option value="Vladivostok">(GMT+10:00) Vladivostok</option>
-              <option value="Magadan">(GMT+11:00) Magadan</option>
-              <option value="New Caledonia">(GMT+11:00) New Caledonia</option>
-              <option value="Solomon Is.">(GMT+11:00) Solomon Is.</option>
-              <option value="Auckland">(GMT+12:00) Auckland</option>
-              <option value="Fiji">(GMT+12:00) Fiji</option>
-              <option value="Kamchatka">(GMT+12:00) Kamchatka</option>
-              <option value="Marshall Is.">(GMT+12:00) Marshall Is.</option>
-              <option value="Wellington">(GMT+12:00) Wellington</option>
-              <option value="Nuku'alofa">(GMT+13:00) Nuku'alofa</option>
-            </optgroup>
-          </select>
-          <div class="btn-container">
-            <button id="save-btn">SAVE</button>
-            <button id="cancel-btn">CANCEL</button>
+        <section class="m-block activity block">
+          <h3>RECENT ACTIVITY</h3>
+          <div class="member-card">
+            <img src="images/member-1.jpg" alt="an image of Victoria Chambers">
+            <div class="member-txt">
+              <p>Victoria Chambers commented on <strong>WebApp's SEO Tips</strong></p>
+              <p>4 hours ago</p>
+            </div>
+            <div class="arrow">&gt;</div>
           </div>
-        </form>
-      </section> 
+          <div class="member-card">
+            <img src="images/member-2.jpg" alt="an image of Dale Byrd">
+            <div class="member-txt">
+              <p>Dale Byrd liked the post <strong>Facebook's Changes for 2021</strong></p>
+              <p>5 hours ago</p>
+            </div>
+            <div class="arrow">&gt;</div>
+          </div>
+          <div class="member-card">
+            <img src="images/member-3.jpg" alt="an image of Dawn Wood">
+            <div class="member-txt">
+              <p>Dawn Wood commented on <strong>Facebook's Changes for 2021</strong></p>
+              <p>5 hours ago</p>
+            </div>
+            <div class="arrow">&gt;</div>
+          </div>
+          <div class="member-card">
+            <img src="images/member-4.jpg" alt="an image of Dan Oliver">
+            <div class="member-txt">
+              <p>Dan Oliver posted <strong>WebApp's SEO Tips</strong></p>
+              <p>1 day ago</p>
+            </div>
+            <div class="arrow">&gt;</div>
+          </div>
+          <div class="member-card">
+            <img src="images/self.png" alt="an image of Zacharie McGee">
+            <div class="member-txt">
+              <p>Zacharie McGee created <strong>WebApp&trade;</strong></p>
+              <p>2 days ago</p>
+            </div>
+            <div class="arrow">&gt;</div>
+          </div>
+        </section>
+
+        <!--///////////////////////////////
+        ///          Messenger          ///
+        ////////////////////////////////-->
+
+        <section class="m-block messenger block">
+          <h3>MESSAGE USER</h3>
+          <form>
+            <div class="search-container">
+              <input type="text"   
+                    class="user-search"
+                    id="userSearch"
+                    placeholder="Search for User"
+                    autocomplete="off">
+                    <ul class="name-dropdown">
+                      <li class="user-to-msg">Dale Byrd</li>
+                      <li class="user-to-msg">Dan Oliver</li>
+                      <li class="user-to-msg">Dawn Wood</li>
+                      <li class="user-to-msg">Victoria Chambers</li>
+                      <li class="user-to-msg">Zacharie McGee</li>
+                    </ul>
+            </div>
+            <div class="msg-alert" id="alert1">
+              <p><strong>Alert: </strong><span class="alert-msg">Select a user to message.</span></p>
+            </div>
+            <textarea class="user-msg"  
+                      id="userMsg"
+                      placeholder="Message to User"></textarea>
+            
+            <div class="msg-alert" id="alert2">
+              <p><strong>Alert: </strong><span class="alert-msg">Can't send an empty message.</span></p>
+            </div>
+            <button class="send-btn" 
+                    id="sendBtn">SEND</button>
+          </form>
+        </section> 
+
+        <!--///////////////////////////////
+        ///  Message Sent Confirmation  ///
+        ////////////////////////////////-->
+
+        <section id="msg-confirmation" class="block">
+          <h2 class="conf-txt">Message Sent!</h2>
+          <form id="send-msg-form">
+            <button type="submit" id="rtn-btn" >Return to Dashboard</button>
+          <form>
+        </section>
+
+        <!--///////////////////////////////
+        ///           Settings          ///
+        ////////////////////////////////-->
+
+        <section id="sett" class="m-block settings block">
+          <h3>SETTINGS</h3>
+          <form>
+            <div class="setting">
+              <p class="set-text">Send Email Notifications</p>
+
+              <div id="s1" class="switch">
+                <input type="button" value="OFF">
+                <input type="button" value="ON">
+              </div>
+            </div>
+
+            <div class="setting">
+              <p class="set-text">Set Profile to Public</p>
+              <div id="s2" class="switch">
+                <input type="button" value="OFF">
+                <input type="button" value="ON">
+              </div>
+            </div>
+
+            <select id="s3" class="timezone">
+              <optgroup label="Global Timezones" class="options">
+                <option value="" disabled hidden>Select a Timezone</option>
+                <option value="Hawaii">(GMT-10:00) Hawaii</option>
+                <option value="Alaska">(GMT-09:00) Alaska</option>
+                <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
+                <option value="Arizona">(GMT-07:00) Arizona</option>
+                <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
+                <option value="Central Time (US &amp; Canada)">(GMT-06:00) Central Time (US &amp; Canada)</option>
+                <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
+                <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option><option value="" disabled="disabled">-------------</option>
+                <option value="International Date Line West">(GMT-11:00) International Date Line West</option>
+                <option value="Midway Island">(GMT-11:00) Midway Island</option>
+                <option value="Samoa">(GMT-11:00) Samoa</option>
+                <option value="Tijuana">(GMT-08:00) Tijuana</option>
+                <option value="Chihuahua">(GMT-07:00) Chihuahua</option>
+                <option value="Mazatlan">(GMT-07:00) Mazatlan</option>
+                <option value="Central America">(GMT-06:00) Central America</option>
+                <option value="Guadalajara">(GMT-06:00) Guadalajara</option>
+                <option value="Mexico City">(GMT-06:00) Mexico City</option>
+                <option value="Monterrey">(GMT-06:00) Monterrey</option>
+                <option value="Saskatchewan">(GMT-06:00) Saskatchewan</option>
+                <option value="Bogota">(GMT-05:00) Bogota</option>
+                <option value="Lima">(GMT-05:00) Lima</option>
+                <option value="Quito">(GMT-05:00) Quito</option>
+                <option value="Caracas">(GMT-04:30) Caracas</option>
+                <option value="Atlantic Time (Canada)">(GMT-04:00) Atlantic Time (Canada)</option>
+                <option value="La Paz">(GMT-04:00) La Paz</option>
+                <option value="Santiago">(GMT-04:00) Santiago</option>
+                <option value="Newfoundland">(GMT-03:30) Newfoundland</option>
+                <option value="Brasilia">(GMT-03:00) Brasilia</option>
+                <option value="Buenos Aires">(GMT-03:00) Buenos Aires</option>
+                <option value="Georgetown">(GMT-03:00) Georgetown</option>
+                <option value="Greenland">(GMT-03:00) Greenland</option>
+                <option value="Mid-Atlantic">(GMT-02:00) Mid-Atlantic</option>
+                <option value="Azores">(GMT-01:00) Azores</option>
+                <option value="Cape Verde Is.">(GMT-01:00) Cape Verde Is.</option>
+                <option value="Casablanca">(GMT) Casablanca</option>
+                <option value="Dublin">(GMT) Dublin</option>
+                <option value="Edinburgh">(GMT) Edinburgh</option>
+                <option value="Lisbon">(GMT) Lisbon</option>
+                <option value="London">(GMT) London</option>
+                <option value="Monrovia">(GMT) Monrovia</option>
+                <option value="Amsterdam">(GMT+01:00) Amsterdam</option>
+                <option value="Belgrade">(GMT+01:00) Belgrade</option>
+                <option value="Berlin">(GMT+01:00) Berlin</option>
+                <option value="Bern">(GMT+01:00) Bern</option>
+                <option value="Bratislava">(GMT+01:00) Bratislava</option>
+                <option value="Brussels">(GMT+01:00) Brussels</option>
+                <option value="Budapest">(GMT+01:00) Budapest</option>
+                <option value="Copenhagen">(GMT+01:00) Copenhagen</option>
+                <option value="Ljubljana">(GMT+01:00) Ljubljana</option>
+                <option value="Madrid">(GMT+01:00) Madrid</option>
+                <option value="Paris">(GMT+01:00) Paris</option>
+                <option value="Prague">(GMT+01:00) Prague</option>
+                <option value="Rome">(GMT+01:00) Rome</option>
+                <option value="Sarajevo">(GMT+01:00) Sarajevo</option>
+                <option value="Skopje">(GMT+01:00) Skopje</option>
+                <option value="Stockholm">(GMT+01:00) Stockholm</option>
+                <option value="Vienna">(GMT+01:00) Vienna</option>
+                <option value="Warsaw">(GMT+01:00) Warsaw</option>
+                <option value="West Central Africa">(GMT+01:00) West Central Africa</option>
+                <option value="Zagreb">(GMT+01:00) Zagreb</option>
+                <option value="Athens">(GMT+02:00) Athens</option>
+                <option value="Bucharest">(GMT+02:00) Bucharest</option>
+                <option value="Cairo">(GMT+02:00) Cairo</option>
+                <option value="Harare">(GMT+02:00) Harare</option>
+                <option value="Helsinki">(GMT+02:00) Helsinki</option>
+                <option value="Istanbul">(GMT+02:00) Istanbul</option>
+                <option value="Jerusalem">(GMT+02:00) Jerusalem</option>
+                <option value="Kyiv">(GMT+02:00) Kyiv</option>
+                <option value="Minsk">(GMT+02:00) Minsk</option>
+                <option value="Pretoria">(GMT+02:00) Pretoria</option>
+                <option value="Riga">(GMT+02:00) Riga</option>
+                <option value="Sofia">(GMT+02:00) Sofia</option>
+                <option value="Tallinn">(GMT+02:00) Tallinn</option>
+                <option value="Vilnius">(GMT+02:00) Vilnius</option>
+                <option value="Baghdad">(GMT+03:00) Baghdad</option>
+                <option value="Kuwait">(GMT+03:00) Kuwait</option>
+                <option value="Moscow">(GMT+03:00) Moscow</option>
+                <option value="Nairobi">(GMT+03:00) Nairobi</option>
+                <option value="Riyadh">(GMT+03:00) Riyadh</option>
+                <option value="St. Petersburg">(GMT+03:00) St. Petersburg</option>
+                <option value="Volgograd">(GMT+03:00) Volgograd</option>
+                <option value="Tehran">(GMT+03:30) Tehran</option>
+                <option value="Abu Dhabi">(GMT+04:00) Abu Dhabi</option>
+                <option value="Baku">(GMT+04:00) Baku</option>
+                <option value="Muscat">(GMT+04:00) Muscat</option>
+                <option value="Tbilisi">(GMT+04:00) Tbilisi</option>
+                <option value="Yerevan">(GMT+04:00) Yerevan</option>
+                <option value="Kabul">(GMT+04:30) Kabul</option>
+                <option value="Ekaterinburg">(GMT+05:00) Ekaterinburg</option>
+                <option value="Islamabad">(GMT+05:00) Islamabad</option>
+                <option value="Karachi">(GMT+05:00) Karachi</option>
+                <option value="Tashkent">(GMT+05:00) Tashkent</option>
+                <option value="Chennai">(GMT+05:30) Chennai</option>
+                <option value="Kolkata">(GMT+05:30) Kolkata</option>
+                <option value="Mumbai">(GMT+05:30) Mumbai</option>
+                <option value="New Delhi">(GMT+05:30) New Delhi</option>
+                <option value="Kathmandu">(GMT+05:45) Kathmandu</option>
+                <option value="Almaty">(GMT+06:00) Almaty</option>
+                <option value="Astana">(GMT+06:00) Astana</option>
+                <option value="Dhaka">(GMT+06:00) Dhaka</option>
+                <option value="Novosibirsk">(GMT+06:00) Novosibirsk</option>
+                <option value="Sri Jayawardenepura">(GMT+06:00) Sri Jayawardenepura</option>
+                <option value="Rangoon">(GMT+06:30) Rangoon</option>
+                <option value="Bangkok">(GMT+07:00) Bangkok</option>
+                <option value="Hanoi">(GMT+07:00) Hanoi</option>
+                <option value="Jakarta">(GMT+07:00) Jakarta</option>
+                <option value="Krasnoyarsk">(GMT+07:00) Krasnoyarsk</option>
+                <option value="Beijing">(GMT+08:00) Beijing</option>
+                <option value="Chongqing">(GMT+08:00) Chongqing</option>
+                <option value="Hong Kong">(GMT+08:00) Hong Kong</option>
+                <option value="Irkutsk">(GMT+08:00) Irkutsk</option>
+                <option value="Kuala Lumpur">(GMT+08:00) Kuala Lumpur</option>
+                <option value="Perth">(GMT+08:00) Perth</option>
+                <option value="Singapore">(GMT+08:00) Singapore</option>
+                <option value="Taipei">(GMT+08:00) Taipei</option>
+                <option value="Ulaan Bataar">(GMT+08:00) Ulaan Bataar</option>
+                <option value="Urumqi">(GMT+08:00) Urumqi</option>
+                <option value="Osaka">(GMT+09:00) Osaka</option>
+                <option value="Sapporo">(GMT+09:00) Sapporo</option>
+                <option value="Seoul">(GMT+09:00) Seoul</option>
+                <option value="Tokyo">(GMT+09:00) Tokyo</option>
+                <option value="Yakutsk">(GMT+09:00) Yakutsk</option>
+                <option value="Adelaide">(GMT+09:30) Adelaide</option>
+                <option value="Darwin">(GMT+09:30) Darwin</option>
+                <option value="Brisbane">(GMT+10:00) Brisbane</option>
+                <option value="Canberra">(GMT+10:00) Canberra</option>
+                <option value="Guam">(GMT+10:00) Guam</option>
+                <option value="Hobart">(GMT+10:00) Hobart</option>
+                <option value="Melbourne">(GMT+10:00) Melbourne</option>
+                <option value="Port Moresby">(GMT+10:00) Port Moresby</option>
+                <option value="Sydney">(GMT+10:00) Sydney</option>
+                <option value="Vladivostok">(GMT+10:00) Vladivostok</option>
+                <option value="Magadan">(GMT+11:00) Magadan</option>
+                <option value="New Caledonia">(GMT+11:00) New Caledonia</option>
+                <option value="Solomon Is.">(GMT+11:00) Solomon Is.</option>
+                <option value="Auckland">(GMT+12:00) Auckland</option>
+                <option value="Fiji">(GMT+12:00) Fiji</option>
+                <option value="Kamchatka">(GMT+12:00) Kamchatka</option>
+                <option value="Marshall Is.">(GMT+12:00) Marshall Is.</option>
+                <option value="Wellington">(GMT+12:00) Wellington</option>
+                <option value="Nuku'alofa">(GMT+13:00) Nuku'alofa</option>
+              </optgroup>
+            </select>
+            <div class="btn-container">
+              <button id="save-btn">SAVE</button>
+              <button id="cancel-btn">CANCEL</button>
+              <button id="reset-btn">RESET</button>
+            </div>
+          </form>
+        </section> 
+      </div>
 
       <!--///////////////////////////////
       ///       Bottom Graphics       ///
@@ -507,8 +527,6 @@
           </svg>
         </div>
       </div>
-      
-    </div>
 
     </main>
 

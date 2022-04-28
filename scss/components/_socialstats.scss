@@ -36,3 +36,17 @@
 .stats-path {
   fill: #fff;
 }
+
+@include mq('med') {
+  .stat-container {
+    @include flexo(space-around, center);
+    gap: 10px;
+  }
+
+  .stat {
+    width: 100%;
+    &:last-child {
+      margin: 10px 0;
+    }
+  }
+}

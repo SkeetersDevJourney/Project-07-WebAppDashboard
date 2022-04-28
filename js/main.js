@@ -39,7 +39,7 @@ for (let i=0; i<removeNotif.length; i++) {
 const alertBox = document.getElementById('alertMsg');
 const removeAlert = document.getElementById('removeAlert');
 
-removeAlert.addEventListener('click', () => {
+removeAlert.addEventListener('click', (e) => {
   alertBox.style.display = 'none';
 });
 
@@ -213,7 +213,10 @@ let searchBar = document.getElementById('userSearch');
 let dropdown = document.querySelector('.name-dropdown');
 let userNames = document.querySelectorAll('.user-to-msg');
 let textArea = document.getElementById('userMsg');
+let sendBtn = document.getElementById('sendBtn');
 
+const alert1 = document.getElementById('alert1');
+const alert2 = document.getElementById('alert2');
 
 searchBar.addEventListener('click', () => {
   dropdown.style.display = 'block';
@@ -241,10 +244,55 @@ searchBar.addEventListener('keyup', () => {
 
 textArea.addEventListener('keyup', () => {
   sessionStorage.setItem('Msg-For-User', textArea.value);
-})
+});
+
+sendBtn.addEventListener('click', (e) => {
+  let currentSearch = searchBar.placeholder;
+  let currentText = textArea.value;
+
+  if (currentSearch == "Search for User") {
+    e.preventDefault();
+    alert1.style.display = 'block';
+
+  } else if (textArea.value == "") {
+    e.preventDefault();
+    alert2.style.display = 'block';
+
+  } else {
+    for (let i=0; i<mainBlocks.length; i++) {
+      mainBlocks[i].style.display = 'none';
+    }
+    msgSent.style.display = 'block';
+    mainGrid.style.height = '100vh';
+    window.scrollTo({top: 0, behavior: 'smooth'}); 
+    alert1.style.display = 'none';
+    alert2.style.display = 'none';
+  }
+});
+
+/*//////////////////////////////// 
+/// Message Confirmation Block ///
+////////////////////////////////*/
+
+let mainGrid = document.querySelector('.main-grid-container'); 
+let mainBlocks = document.querySelectorAll('.m-block');
+let msgSent = document.getElementById('msg-confirmation');
+
+let rtnBtn = document.getElementById('rtn-btn');
+let msgForm = document.getElementById('send-msg-form');
+
+rtnBtn.addEventListener('click', () => {
+  for (let i=0; i<mainBlocks.length; i++) {
+    mainBlocks[i].style.removeProperty('display');
+  }
+  msgSent.style.display = 'none';
+  mainGrid.style.removeProperty('height');
+  searchBar.placeholder = 'Search for User';
+  textArea.value = '';
+});
 
 /*////////////////////////////////
-///          Storage           ///
+///     Settings / Storage     ///
 ////////////////////////////////*/
 
 let s1 = document.getElementById('s1');
@@ -253,6 +301,7 @@ let s3 = document.getElementById('s3');
 let options = document.querySelectorAll('option');
 let save = document.getElementById('save-btn');
 let cancel = document.getElementById('cancel-btn');
+let reset = document.getElementById('reset-btn');
 
 if (localStorage.getItem('firstTime') == undefined) {
   localStorage.setItem('firstTime', 'NO');
@@ -285,7 +334,6 @@ function setSettings() {
 
   // Selected Timezone
   if (localStorage.getItem('s3') == 'default') {
-    console.log(options[0]);
     options[0].selected = 'selected';
   } else {
     options[0].removeAttribute('selected');
@@ -346,6 +394,14 @@ cancel.addEventListener('click', () => {
   }
   console.log('Changes Cancelled...');
 })
+
+reset.addEventListener('click', () => {
+  localStorage.setItem('s1', 'OFF');
+  localStorage.setItem('s2', 'OFF');
+  localStorage.setItem('s3', 'default');
+  setSettings();
+  console.log('Settings Reset...');
+});
 
 
 

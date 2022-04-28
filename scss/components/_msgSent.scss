@@ -1,0 +1,24 @@
+/*///////////////////////////////
+/// Message Sent Confirmation ///
+///////////////////////////////*/
+
+@use "../util" as *;
+
+#msg-confirmation {
+  display: none;
+  text-align: center; 
+}
+
+.conf-txt, #rtn-btn {
+  padding: 0.5em;
+}
+
+#rtn-btn {
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: dkn($color-gradient-1);
+  border-radius: 10px;
+  &:hover, &:focus {
+    background-color: $color-gradient-1;
+  }
+}
