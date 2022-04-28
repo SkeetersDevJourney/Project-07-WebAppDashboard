@@ -73,8 +73,5 @@ footer {
     section:nth-child(n+5) {
       grid-column: span 1;
     }
-    section:last-child {
-      grid-column: span 2;
-    }
   }
 }

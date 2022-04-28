@@ -112,9 +112,6 @@ footer {
   .main-grid-container section:nth-child(n+5) {
     grid-column: span 1;
   }
-  .main-grid-container section:last-child {
-    grid-column: span 2;
-  }
 }
 /*///////////////////////////////
 ///           Blocks          ///
