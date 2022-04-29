@@ -385,14 +385,6 @@ save.addEventListener('click', () => {
   console.log('Settings Saved...');
 })
 
-// cancel.addEventListener('click', (e) => {
-//   for (const key in localStorage) {
-//     sessionStorage.setItem(`${key}`, `${localStorage[key]}`);
-//     setSettings();
-//   }
-//   console.log('Changes Cancelled...');
-// })
-
 reset.addEventListener('click', () => {
   localStorage.setItem('s1', 'OFF');
   localStorage.setItem('s2', 'OFF');
